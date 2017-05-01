@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+$router->group(['namespace' => 'Frontend'], function () use ($router) {
+    require __DIR__.'/Routes/Frontend/Frontend.php';
 });
