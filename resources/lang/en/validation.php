@@ -13,6 +13,7 @@ return [
     |
     */
 
+    'some_problems_input' => 'There were some problems with your input',
     'accepted'             => 'The :attribute must be accepted.',
     'active_url'           => 'The :attribute is not a valid URL.',
     'after'                => 'The :attribute must be a date after :date.',
@@ -101,6 +102,9 @@ return [
         'attribute-name' => [
             'rule-name' => 'custom-message',
         ],
+        'g-recaptcha-response' => [
+        'required' => 'The Recaptcha field is required.',
+        ],
     ],
 
     /*
@@ -114,6 +118,14 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'first_name' => 'First Name',
+        'last_name'  => 'Last Name',
+        'email'      => 'E-Mail',
+        'password'   => 'Password',
+        'nickname'   => 'User Name (Nickname)',
+    ],
+
+    'recaptcha' => 'The Recaptcha field is not correct.',
 
 ];
