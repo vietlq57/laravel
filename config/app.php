@@ -163,6 +163,9 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        Former\FormerServiceProvider::class,
+        Bootstrapper\BootstrapperL5ServiceProvider::class,
+
     ],
 
     /*
@@ -192,6 +195,7 @@ return [
         'File' => Illuminate\Support\Facades\File::class,
         'Gate' => Illuminate\Support\Facades\Gate::class,
         'Hash' => Illuminate\Support\Facades\Hash::class,
+        'Input'  => Illuminate\Support\Facades\Input::class,
         'Lang' => Illuminate\Support\Facades\Lang::class,
         'Log' => Illuminate\Support\Facades\Log::class,
         'Mail' => Illuminate\Support\Facades\Mail::class,
@@ -208,6 +212,30 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        'Utils' => App\Libraries\Utils::class,
+        'Former' => Former\Facades\Former::class,
+        'Alert'           => Bootstrapper\Facades\Alert::class,
+        'Badge'           => Bootstrapper\Facades\Badge::class,
+        'Breadcrumb'      => Bootstrapper\Facades\Breadcrumb::class,
+        'Button'          => Bootstrapper\Facades\Button::class,
+        'ButtonGroup'     => Bootstrapper\Facades\ButtonGroup::class,
+        'ButtonToolbar'   => Bootstrapper\Facades\ButtonToolbar::class,
+        'Carousel'        => Bootstrapper\Facades\Carousel::class,
+        'DropdownButton'  => Bootstrapper\Facades\DropdownButton::class,
+        'Helpers'         => Bootstrapper\Facades\Helpers::class,
+        'Icon'            => Bootstrapper\Facades\Icon::class,
+        'Label'           => Bootstrapper\Facades\Label::class,
+        'MediaObject'     => Bootstrapper\Facades\MediaObject::class,
+        'Navbar'          => Bootstrapper\Facades\Navbar::class,
+        'Navigation'      => Bootstrapper\Facades\Navigation::class,
+        'Paginator'       => Bootstrapper\Facades\Paginator::class,
+        'Progress'        => Bootstrapper\Facades\Progress::class,
+        'Tabbable'        => Bootstrapper\Facades\Tabbable::class,
+        'Table'           => Bootstrapper\Facades\Table::class,
+        'Thumbnail'       => Bootstrapper\Facades\Thumbnail::class,
+        'Typeahead'       => Bootstrapper\Facades\Typeahead::class,
+        'Typography'      => Bootstrapper\Facades\Typography::class,
 
     ],
 
