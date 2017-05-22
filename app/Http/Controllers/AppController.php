@@ -24,13 +24,15 @@ use View;
 
 class AppController extends Controller
 {
+    protected $accountRepo;
     protected $mailer;
+    protected $emailService;
 
-    public function __construct(Mailer $mailer)
+    public function __construct(AccountRepository $accountRepo, Mailer $mailer)
     {
         //parent::__construct();
 
-
+        $this->accountRepo = $accountRepo;
         $this->mailer = $mailer;
     }
 
