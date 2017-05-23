@@ -112,7 +112,7 @@ Route::group(['middleware' => ['lookup:contact']], function () {
     Route::post('/client/password/reset', ['as' => 'forgot', 'uses' => 'ClientAuth\PasswordController@postReset']);
 });
 
-/*if (Utils::isNinja()) {
+if (Utils::isNinja()) {
     Route::post('/signup/register', 'AccountController@doRegister');
     Route::get('/news_feed/{user_type}/{version}/', 'HomeController@newsFeed');
 }
@@ -123,7 +123,7 @@ if (Utils::isReseller()) {
 
 if (Utils::isTravis()) {
     Route::get('/check_data', 'AppController@checkData');
-}*/
+}
 
 Route::group(['middleware' => ['lookup:user', 'auth:user']], function () {
     Route::get('dashboard', 'DashboardController@index');
@@ -244,9 +244,9 @@ Route::group(['middleware' => ['lookup:user', 'auth:user']], function () {
 });
 
 Route::group([
-    'middleware' => ['lookup:user', 'auth:user', 'permissions.required'],
-    'permissions' => 'admin',
-], function () {
+                 'middleware' => ['lookup:user', 'auth:user', 'permissions.required'],
+                 'permissions' => 'admin',
+             ], function () {
     Route::get('api/users', 'UserController@getDatatable');
     Route::resource('users', 'UserController');
     Route::post('users/bulk', 'UserController@bulk');

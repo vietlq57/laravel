@@ -165,6 +165,7 @@ return [
 
         Former\FormerServiceProvider::class,
         Bootstrapper\BootstrapperL5ServiceProvider::class,
+        Collective\Html\HtmlServiceProvider::class,
 
     ],
 
@@ -236,6 +237,7 @@ return [
         'Thumbnail'       => Bootstrapper\Facades\Thumbnail::class,
         'Typeahead'       => Bootstrapper\Facades\Typeahead::class,
         'Typography'      => Bootstrapper\Facades\Typography::class,
+        'HTML'              => Collective\Html\HtmlFacade::class,
 
     ],
 

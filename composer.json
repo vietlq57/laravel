@@ -8,7 +8,8 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.2.*",
         "anahkiasen/former": "4.0.*@dev",
-        "patricktalmadge/bootstrapper": "5.5.x"
+        "patricktalmadge/bootstrapper": "5.5.x",
+        "laravelcollective/html": "5.2.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
