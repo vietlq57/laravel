@@ -238,6 +238,7 @@ return [
         'Typeahead'       => Bootstrapper\Facades\Typeahead::class,
         'Typography'      => Bootstrapper\Facades\Typography::class,
         'HTML'              => Collective\Html\HtmlFacade::class,
+        'Carbon'          => Carbon\Carbon::class,
 
     ],
 
