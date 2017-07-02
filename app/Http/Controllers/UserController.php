@@ -102,6 +102,7 @@ class UserController extends UserBaseController
                     return '<img height="100px" src=\''.$row->getGravatarAttribute().'\'>';
                 }
              )
+            ->rawColumns(['roles', 'status', 'gender', 'avatar', 'action'])
             ->make(true);
         return $data;
 
