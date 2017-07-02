@@ -14,8 +14,6 @@ class SettingsSeeder extends Seeder
     {
         \DB::table('settings')->delete();
 
-        \DB::statement('ALTER TABLE settings AUTO_INCREMENT = 1');
-
         DB::table('settings')->insert([
             ['site_name'   => 'User',
              'logo'        => '',

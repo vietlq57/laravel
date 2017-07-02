@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Classes\Reply;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\UserBaseController;
+use App\Http\Requests\LoginRequest;
 use App\Models\Setting;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
@@ -45,13 +46,12 @@ class LoginController extends UserBaseController
 
     public function index(){
         $this->page_title = 'Login';
-        $global =  Setting::first();
 
         if(Auth::check()){
             return Redirect::route('user.dashboard.index');
         }
 
-        return View::make('admin.login', ['pageTitle' => $this->page_title, 'global']);
+        return View::make('admin.login', ['pageTitle' => $this->page_title]);
     }
 
     public function ajaxLogin(LoginRequest $request)
