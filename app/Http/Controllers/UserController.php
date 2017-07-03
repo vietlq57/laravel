@@ -137,8 +137,8 @@ class UserController extends UserBaseController
 
         if ($request->image) {
             $fileName = $this->generateNewFileName($request->image->getClientOriginalName());
-            Storage::put('avatar/' . $fileName, fopen($request->image, 'r'), 'public');
-            $this->avatar = $fileName;
+            Storage::disk('avatar')->put($fileName, fopen($request->image, 'r'));
+            $user->avatar = $fileName;
         }
 
         $user->save();
@@ -189,7 +189,7 @@ class UserController extends UserBaseController
 
         if ($request->image) {
             $fileName = $this->generateNewFileName($request->image->getClientOriginalName());
-            Storage::put('avatar/' . $fileName, fopen($request->image, 'r'), 'public');
+            Storage::disk('avatar')->put($fileName, fopen($request->image, 'r'));
             $user->avatar = $fileName;
         }
 

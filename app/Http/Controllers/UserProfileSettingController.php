@@ -66,7 +66,7 @@ class UserProfileSettingController extends UserBaseController
             } elseif ($request->type == 'avatar') {
                 if ($request->image) {
                     $fileName = $this->generateNewFileName($request->image->getClientOriginalName());
-                    Storage::put('avatar/' . $fileName, fopen($request->image, 'r'), 'public');
+                    Storage::disk('avatar')->put($fileName, fopen($request->image, 'r'));
                     $user->avatar = $fileName;
                     $user->save();
 
@@ -85,7 +85,7 @@ class UserProfileSettingController extends UserBaseController
         }
 
         DB::commit();
-        return Reply::success('messages.updateSuccess', $image);
+        return Reply::success('Updated Successfully', $image);
 
     }
 

@@ -41,12 +41,8 @@ class PermissionSeeder extends Seeder
 
         DB::table('roles')->insert([
             ['name' => 'admin', 'display_name' => 'Admin', 'description' => 'Superadmin'],
-            ['name' => 'role-dashboard', 'display_name' => 'Role Dashboard', 'description' => 'user role dashboard'],
             ['name' => 'role-users', 'display_name' => 'Role Users', 'description' => 'user role role-users'],
             ['name' => 'role-roles&permissions', 'display_name' => 'Role Roles and Permissions', 'description' => 'user role roles and permissions'],
-            ['name' => 'role-email-template', 'display_name' => 'Role Email Template', 'description' => 'user role email template'],
-            ['name' => 'role-messages', 'display_name' => 'Role messages', 'description' => 'user role messages'],
-            ['name' => 'role-settings', 'display_name' => 'Role settings', 'description' => 'user role settings'],
 
         ]);
 
@@ -72,36 +68,6 @@ class PermissionSeeder extends Seeder
         foreach($permissions as $permission) {
             DB::table('permission_role')->insert([
                 ['permission_id' => $permission->id, 'role_id' => 1],
-            ]);
-        }
-
-        if (env('APP_ENV') !== 'production') {
-            DB::table('permission_role')->insert([
-                ['permission_id' => 1, 'role_id' => 2],
-                ['permission_id' => 2, 'role_id' => 3],
-                ['permission_id' => 3, 'role_id' => 3],
-                ['permission_id' => 4, 'role_id' => 3],
-                ['permission_id' => 5, 'role_id' => 3],
-                ['permission_id' => 6, 'role_id' => 3],
-                ['permission_id' => 7, 'role_id' => 4],
-                ['permission_id' => 8, 'role_id' => 4],
-                ['permission_id' => 9, 'role_id' => 4],
-                ['permission_id' => 10, 'role_id' => 4],
-                ['permission_id' => 11, 'role_id' => 4],
-                ['permission_id' => 12, 'role_id' => 4],
-                ['permission_id' => 13, 'role_id' => 4],
-                ['permission_id' => 14, 'role_id' => 5],
-                ['permission_id' => 15, 'role_id' => 6],
-                ['permission_id' => 16, 'role_id' => 6],
-                ['permission_id' => 17, 'role_id' => 7],
-                ['permission_id' => 18, 'role_id' => 8],
-                ['permission_id' => 19, 'role_id' => 8],
-                ['permission_id' => 20, 'role_id' => 8],
-                ['permission_id' => 21, 'role_id' => 8],
-                ['permission_id' => 22, 'role_id' => 8],
-                ['permission_id' => 23, 'role_id' => 8],
-                ['permission_id' => 24, 'role_id' => 8],
-                ['permission_id' => 25, 'role_id' => 4],
             ]);
         }
     }

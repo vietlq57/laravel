@@ -6,6 +6,7 @@ use App\Presenters\UserPresenter;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Laracasts\Presenter\PresentableTrait;
 use Zizaco\Entrust\Traits\EntrustUserTrait;
+use Storage;
 
 /**
  * App\Models\User
@@ -56,7 +57,7 @@ class User extends Authenticatable
             $url = 'https://www.gravatar.com/avatar/' . md5( strtolower( trim( $this->email ) ) ) . '?d='.$d.'&s='. $size;
 
         }else{
-            $url = asset('avatar/'.$this->avatar);
+            $url = asset('avatar/' . $this->avatar);
         }
 
         return $url;
